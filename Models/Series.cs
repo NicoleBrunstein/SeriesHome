@@ -1,7 +1,7 @@
 using System.Data.SqlClient;
 using Dapper;
 
-namespace serieshome;
+
 public class Series
 {
      public int IdSerie {get;set;}
