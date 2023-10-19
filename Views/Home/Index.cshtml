@@ -9,5 +9,23 @@
 
 @foreach(Series serie in @ViewBag.Series)
 {
-    <p>@ViewBag.Series</p>
+    <option>@serie.Nombre</option>
+     <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card">
+                        <img src="@serie.ImagenSerie" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@serie.Nombre</h5>
+                        </div>
+                        <div class="card-body">
+                            <button type="button" class="btn" onclick="MostrarMasInfo(@serie.IdSerie)">
+                                Ver más info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    
 }
+

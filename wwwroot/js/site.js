@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+function MostrarMasInfo(pid)
+{
 
-// Write your JavaScript code.
+    $.ajax(
+        {
+            url: '/Home/GetSerie',
+            data: {id : pid},
+            type: 'GET',
+            dataType: 'JSON',
+            
+            
+            success: function(response)
+            {
+                alert("ok");
+            }
+        }
+    )
+}

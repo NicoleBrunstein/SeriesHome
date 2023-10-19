@@ -17,5 +17,16 @@ public class BD
         return listadoSeries;
     }
 
+    public static Series SerieElegida(int id)
+    {
+         Series serieElegida = null;
+         using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT IdSerie FROM Series WHERE IdSerie = @pidserie";
+            serieElegida = db.QueryFirstOrDefault<Series>(sql, new {@pidserie = id});
+        }
+        return serieElegida;
+    }
+
       
 }
