@@ -28,5 +28,25 @@ public class BD
         return serieElegida;
     }
 
-      
+ public static List<Actores> ObtenerActores(int id)
+    {
+        List<Actores> actores = new List<Actores>();
+        string sql = "SELECT * FROM Actores WHERE IdSerie = @id";
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            actores = BD.Query<Actores>(sql, new { id }).ToList();
+        }
+        return actores;
+    }
+
+    public static List<Temporadas> ObtenerTemporadas(int id)
+    {
+        List<Temporadas> temporadas = new List<Temporadas>();
+        string sql = "SELECT * FROM Temporadas WHERE IdSerie = @id";
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            temporadas = BD.Query<Temporadas>(sql, new { id }).ToList();
+        }
+        return temporadas;
+    }
 }
