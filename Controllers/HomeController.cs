@@ -20,7 +20,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public List<Series> GetSerie(int id)
+    public Series GetSerie(int id)
     {
         return  BD.SerieElegida(id );
         //va air a BD, pasa el parametro de la serie que quiere trae, lo deuvle

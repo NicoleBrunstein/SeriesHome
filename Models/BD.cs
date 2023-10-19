@@ -22,7 +22,7 @@ public class BD
          Series serieElegida = null;
          using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT IdSerie FROM Series WHERE IdSerie = @pidserie";
+            string sql = "SELECT * FROM Series WHERE IdSerie = @pidserie";
             serieElegida = db.QueryFirstOrDefault<Series>(sql, new {@pidserie = id});
         }
         return serieElegida;

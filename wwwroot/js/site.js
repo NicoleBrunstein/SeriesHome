@@ -12,7 +12,8 @@ function MostrarMasInfo(pid)
             
             success: function(response)
             {
-                alert("ok");
+            
+                alert(response.sinopsis);
             }
         }
     )
